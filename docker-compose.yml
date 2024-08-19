@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: live_wave_system
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./web/static:/root/static
+      - ./web/views:/root/views
+    environment:
+      - PORT=8080
